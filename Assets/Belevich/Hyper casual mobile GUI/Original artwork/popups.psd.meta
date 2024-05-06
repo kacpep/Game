@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -136,21 +136,42 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: popups_0
+      name: popups_1
       rect:
         serializedVersion: 2
-        x: 195
-        y: 2623
-        width: 1868
-        height: 969
-      alignment: 9
+        x: 2408
+        y: 2666
+        width: 1799
+        height: 894
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 284, y: 94, z: 237, w: 128}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 470f584bc64b1df4cb11a7770fb901e8
+      spriteID: 2405a3a91a4a81304ad1484eb9c27f96
+      internalID: 2003588804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: popups_0
+      rect:
+        serializedVersion: 2
+        x: 5470
+        y: 2125
+        width: 1176
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 498, y: 0, z: 528, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8940b0ce173adaea8e8cdca0de9929
       internalID: -471292492
       vertices: []
       indices: 
@@ -168,6 +189,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       popups_0: -471292492
+      popups_1: 2003588804
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
