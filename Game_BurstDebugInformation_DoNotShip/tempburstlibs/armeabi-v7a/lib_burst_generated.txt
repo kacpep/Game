@@ -52,6 +52,7 @@ Library: C:\Users\drfrezze\Documents\Unity\Game\Temp\BurstOutput\tempburstlibs\a
 --assembly-defines=mscorlib;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\drfrezze\Documents\Unity\Game\Temp\Burst
+--debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.25f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\drfrezze\Documents\Unity\Game\Library\Burst
 --output=C:\Users\drfrezze\Documents\Unity\Game\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated

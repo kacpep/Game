@@ -46,7 +46,7 @@ public class QRCodeScanner : MonoBehaviour
                 {
                     // QR code detected, do something with the result
                     qrText = result.Text;
-                    SceneManager.LoadScene("datatransform");
+                    SceneManager.LoadScene("Question Page");
 
                 }
             }
