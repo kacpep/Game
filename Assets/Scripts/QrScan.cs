@@ -2,33 +2,35 @@
 using UnityEngine.UI;
 using ZXing;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class QRCodeScanner : MonoBehaviour
 {
     public RawImage cameraDisplay; // Reference to the RawImage component for displaying the camera feed
     public TMP_Text IdText;
-
-
-
     private WebCamTexture webcamTexture;
     private BarcodeReader barcodeReader;
+    public static string qrText;
+    public static QRCodeScanner Instance;
 
-
+ 
 
     void Start()
     {
-        // Initialize the camera
         webcamTexture = new WebCamTexture();
         cameraDisplay.texture = webcamTexture; // Assign the webcam texture to the RawImage for display
         webcamTexture.Play();
 
         // Initialize the barcode reader
         barcodeReader = new BarcodeReader();
-        
+
+     
+
     }
 
     void Update()
     {
-        // Check for QR codes in the camera feed
+
         if (webcamTexture.isPlaying)
         {
             try
@@ -43,8 +45,9 @@ public class QRCodeScanner : MonoBehaviour
                 if (result != null)
                 {
                     // QR code detected, do something with the result
-                     IdText.text = "Id: " + result.Text;
-                    
+                    qrText = result.Text;
+                    SceneManager.LoadScene("datatransform");
+
                 }
             }
             catch (System.Exception ex) { Debug.LogWarning(ex.Message); }
