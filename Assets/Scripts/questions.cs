@@ -54,10 +54,7 @@ public class questions : MonoBehaviour
             answer4.text = questionData.answers.d;
 
         }
-        else
-        {
-            Debug.Log("err");
-        }
+        
        
      
        

@@ -488,7 +488,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 326575268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1193180267}
+        m_TargetAssemblyTypeName: LoadingScane, Assembly-CSharp
+        m_MethodName: NextLocationPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &326575268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1866,6 +1878,7 @@ GameObject:
   - component: {fileID: 1193180261}
   - component: {fileID: 1193180265}
   - component: {fileID: 1193180266}
+  - component: {fileID: 1193180267}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1994,6 +2007,18 @@ MonoBehaviour:
   timeSlider: {fileID: 1979060257}
   timeOver: {fileID: 2059090018}
   targetTime: 10
+--- !u!114 &1193180267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193180260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b81c2ad9b49b6d9899a9d7fd190be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1344924932
 GameObject:
   m_ObjectHideFlags: 0
