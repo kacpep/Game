@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ScannerQr.unity
     guid: e3813fc286f76074eb38d398461f6194
+  - enabled: 1
+    path: Assets/Scenes/nextLocationScene.unity
+    guid: 2d4c73268212beb47b235e4233fcc70f
   m_configObjects: {}
