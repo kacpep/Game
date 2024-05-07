@@ -29,6 +29,10 @@ public class LoadingScane : MonoBehaviour
     {
         SceneManager.LoadScene("Question Page");
     }
+     public void NextLocationPage()
+    {
+        SceneManager.LoadScene("nextLocationScene");
+    }
 
     public void Exit()
     {
