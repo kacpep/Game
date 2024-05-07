@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 [System.Serializable]
@@ -11,6 +12,7 @@ public class QuestionData
     public string number;
     public string lat;
     public string lng;
+    public string name;
     public string question;
     public Answers answers;
     public string correct_answer;
@@ -27,6 +29,7 @@ public class QuestionData
 
 public class questions : MonoBehaviour
 {
+    public static QuestionData allData;
     public TMP_Text question;
     public TMP_Text answer1;
     public TMP_Text answer2;
@@ -42,7 +45,8 @@ public class questions : MonoBehaviour
     {
         if (questionData != null)
         {
-            
+            correctAnswer = questionData.correct_answer;
+            allData = questionData;
             question.text = questionData.question;
             answer1.text = questionData.answers.a;
             answer2.text = questionData.answers.b;
@@ -65,7 +69,7 @@ public class questions : MonoBehaviour
     {
         if(answer == correctAnswer)
         {
-
+            SceneManager.LoadScene("nextLocationScene");
         }
     }
 }
