@@ -33,6 +33,10 @@ public class LoadingScane : MonoBehaviour
     {
         SceneManager.LoadScene("nextLocationScene");
     }
+     public void SettingsPage()
+    {
+        SceneManager.LoadScene("Settings Page");
+    }
 
     public void Exit()
     {
