@@ -1486,7 +1486,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1093872321}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1285651659}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1093872321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1538,6 +1550,7 @@ GameObject:
   - component: {fileID: 1285651655}
   - component: {fileID: 1285651654}
   - component: {fileID: 1285651658}
+  - component: {fileID: 1285651659}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1642,6 +1655,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66b81c2ad9b49b6d9899a9d7fd190be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1285651659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285651653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d25a1915f96f264593d6e36d5774dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1291779365
