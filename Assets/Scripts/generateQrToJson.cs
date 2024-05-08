@@ -72,6 +72,7 @@ public class generateQrToJson : MonoBehaviour
             return null;
         }
         PlayerPrefs.SetString("name", initialData.name);
+        PlayerPrefs.SetString("lastNumber", initialData.numberOfQuestions);
         PlayerPrefs.SetString("gameId", initialData.gameId);
         PlayerPrefs.SetString("lat", initialData.lat);
         PlayerPrefs.SetString("lng", initialData.lng);

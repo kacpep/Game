@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 
@@ -45,9 +46,20 @@ public class questions : MonoBehaviour
     // Update is called once per frame
    public void sendRespone(string answer)
     {
+
         if(answer == correctAnswer)
+        {
+            PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score",0) + 1); 
+        }
+        if(PlayerPrefs.GetInt("lastNumber") == PlayerPrefs.GetInt("number"))
+        {
+            SceneManager.LoadScene("Finish Page");
+
+        }
+        else
         {
             SceneManager.LoadScene("nextLocationScene");
         }
+        
     }
 }

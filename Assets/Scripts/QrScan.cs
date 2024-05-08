@@ -13,7 +13,7 @@ public class QRCodeScanner : MonoBehaviour
     private BarcodeReader barcodeReader;
     public static string qrText;
     public static QRCodeScanner Instance;
-    int flag = 0;
+
 
  
 

@@ -6,13 +6,16 @@ using UnityEngine;
 public class nextLocation : MonoBehaviour
 {
     public TMP_Text LocationName;
+    public TMP_Text label;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        
-        LocationName.text = PlayerPrefs.GetString("name","error"); ;
+        if (PlayerPrefs.GetInt("number", 0) == 0)
+        {
+            label.SetText("Go to location");
+        }
+        LocationName.text = PlayerPrefs.GetString("name","error"); 
     }
 
     // Update is called once per frame
