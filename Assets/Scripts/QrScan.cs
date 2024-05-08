@@ -54,15 +54,39 @@ public class QRCodeScanner : MonoBehaviour
                     
                     if (PlayerPrefs.GetInt("CurrentStatus", 0) == 0)
                     {
-                        PlayerPrefs.SetInt("CurrentStatus", 1);
-                        GetComponent<generateQrToJson>().RefactorJsonInitial(qrText);
-                        
-                        SceneManager.LoadScene("nextLocationScene");
+                         try{
+                            InitialData initialData = GetComponent<generateQrToJson>().RefactorJsonInitial(qrText);
+                            if(initialData == null){
+                                SceneManager.LoadScene("Error Page");
+                            }else{
+
+                            PlayerPrefs.SetInt("CurrentStatus", 1);
+                            SceneManager.LoadScene("nextLocationScene");
+                            }
+                         }catch{
+                            Debug.Log("Error");
+                            SceneManager.LoadScene("Error Page");
+                        }
+                  
+                       
                     }
                     else
                     {
-                        GetComponent<generateQrToJson>().RefactorJson(qrText);
-                        SceneManager.LoadScene("Question Page");
+                       try{
+
+                            QuestionData questionData = GetComponent<generateQrToJson>().RefactorJson(qrText);
+                            if(questionData == null){
+                                SceneManager.LoadScene("Error Page");
+                            }else{
+                                SceneManager.LoadScene("Question Page");
+                            
+                            }
+
+                       }catch{
+                            Debug.Log("Error");
+                            SceneManager.LoadScene("Error Page");
+                        }
+
                     }
 
                    
