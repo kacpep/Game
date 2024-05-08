@@ -11,11 +11,19 @@ public class StartRedirection : MonoBehaviour
 
         //remove at end
         /* PlayerPrefs.DeleteAll();*/
-       
-        if (PlayerPrefs.GetInt("CurrentStatus", 0) == 1)
+        if(PlayerPrefs.GetString("lastNumber","1") == PlayerPrefs.GetString("number","0"))
         {
-            SceneManager.LoadScene("nextLocationScene");
+            SceneManager.LoadScene("Finish Page");
+
+        }else{
+            if (PlayerPrefs.GetInt("CurrentStatus", 0) == 1)
+            {
+                SceneManager.LoadScene("nextLocationScene");
+            }
         }
+       
+       
+       
     }
 
     // Update is called once per frame
