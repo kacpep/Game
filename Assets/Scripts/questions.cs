@@ -51,7 +51,7 @@ public class questions : MonoBehaviour
         {
             PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score",0) + 1); 
         }
-        if(PlayerPrefs.GetInt("lastNumber") == PlayerPrefs.GetInt("number"))
+        if(PlayerPrefs.GetString("lastNumber") == PlayerPrefs.GetString("number", "0"))
         {
             SceneManager.LoadScene("Finish Page");
 

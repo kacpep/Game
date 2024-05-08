@@ -11,7 +11,7 @@ public class nextLocation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt("number", 0) == 0)
+        if (PlayerPrefs.GetString("number","0") == "0")
         {
             label.SetText("Go to location");
         }

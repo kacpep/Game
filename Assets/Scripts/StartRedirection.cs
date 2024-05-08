@@ -11,8 +11,7 @@ public class StartRedirection : MonoBehaviour
 
         //remove at end
         /* PlayerPrefs.DeleteAll();*/
-        PlayerPrefs.SetInt("number", 0);
-        PlayerPrefs.SetInt("score", 0);
+       
         if (PlayerPrefs.GetInt("CurrentStatus", 0) == 1)
         {
             SceneManager.LoadScene("nextLocationScene");

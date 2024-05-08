@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,6 +54,12 @@ public class generateQrToJson : MonoBehaviour
         allData = JsonUtility.FromJson<QuestionData>(qrText);
  
         if(allData == null || allData.gameId != PlayerPrefs.GetString("gameId") || allData.name == null || allData.number == null || allData.lat == null || allData.lng == null || allData.question == null || allData.answers.a == null || allData.answers.b == null || allData.answers.c == null || allData.answers.d == null || allData.correct_answer == null) 
+        {
+          
+           return null;
+                
+        }
+        if (Int32.Parse(allData.number) != Int32.Parse(PlayerPrefs.GetString("number","0")) + 1)
         {
             return null;
         }

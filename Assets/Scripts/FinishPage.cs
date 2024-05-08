@@ -9,7 +9,7 @@ public class FinishPage : MonoBehaviour
     public TMP_Text score;
     void Start()
     {
-        score.SetText("Score: " + PlayerPrefs.GetInt("score",9999));
+        score.SetText("Score: " + PlayerPrefs.GetInt("score",0));
     }
 
     // Update is called once per frame
