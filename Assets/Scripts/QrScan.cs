@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using ZXing;
 using TMPro;
 using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
 
 public class QRCodeScanner : MonoBehaviour
 {
@@ -12,11 +13,16 @@ public class QRCodeScanner : MonoBehaviour
     private BarcodeReader barcodeReader;
     public static string qrText;
     public static QRCodeScanner Instance;
+    int flag = 0;
 
  
 
     void Start()
     {
+
+       
+
+
         webcamTexture = new WebCamTexture();
         cameraDisplay.texture = webcamTexture; // Assign the webcam texture to the RawImage for display
         webcamTexture.Play();
@@ -24,7 +30,7 @@ public class QRCodeScanner : MonoBehaviour
         // Initialize the barcode reader
         barcodeReader = new BarcodeReader();
 
-     
+
 
     }
 
@@ -42,11 +48,26 @@ public class QRCodeScanner : MonoBehaviour
                 var height = webcamTexture.height;
                 result = barcodeReader.Decode(data, width, height);
 
-                if (result != null)
+                if (result != null )
                 {
-                    // QR code detected, do something with the result
                     qrText = result.Text;
-                    SceneManager.LoadScene("Question Page");
+                    
+                    if (PlayerPrefs.GetInt("CurrentStatus", 0) == 0)
+                    {
+                        PlayerPrefs.SetInt("CurrentStatus", 1);
+                        GetComponent<generateQrToJson>().RefactorJsonInitial(qrText);
+                        
+                        SceneManager.LoadScene("nextLocationScene");
+                    }
+                    else
+                    {
+                        GetComponent<generateQrToJson>().RefactorJson(qrText);
+                        SceneManager.LoadScene("Question Page");
+                    }
+
+                   
+
+
 
                 }
             }

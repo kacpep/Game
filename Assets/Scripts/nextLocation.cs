@@ -6,12 +6,13 @@ using UnityEngine;
 public class nextLocation : MonoBehaviour
 {
     public TMP_Text LocationName;
-    QuestionData allData;
+
     // Start is called before the first frame update
     void Start()
     {
-        allData = questions.allData;
-        LocationName.text = allData.name;
+        
+        
+        LocationName.text = PlayerPrefs.GetString("name","error"); ;
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class nextLocation : MonoBehaviour
     { 
        
         
-        string url = "https://www.google.com/maps?q=" + allData.lat + "," + allData.lng;
+        string url = "https://www.google.com/maps?q=" + PlayerPrefs.GetString("lat", "error") + "," + PlayerPrefs.GetString("lng", "error");
 
         // Open the URL
         Application.OpenURL(url);
