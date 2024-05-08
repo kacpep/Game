@@ -57,6 +57,7 @@ public class generateQrToJson : MonoBehaviour
     {
         initialData = JsonUtility.FromJson<InitialData>(qrText);
         PlayerPrefs.SetString("name", initialData.name);
+        PlayerPrefs.SetString("lastNumber", initialData.numberOfQuestions);
         PlayerPrefs.SetString("lat", initialData.lat);
         PlayerPrefs.SetString("lng", initialData.lng);
 
