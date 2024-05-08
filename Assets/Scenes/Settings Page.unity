@@ -254,7 +254,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -86.4, y: -4.1}
-  m_SizeDelta: {x: 64.1759, y: 54.3172}
+  m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41673504
 MonoBehaviour:
@@ -1849,8 +1849,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Home
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04dd8b251ea9e1ab98fc9e71eac32351, type: 2}
+  m_sharedMaterial: {fileID: -8903681024326283375, guid: 04dd8b251ea9e1ab98fc9e71eac32351, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1961,7 +1961,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -40.9, y: -234}
-  m_SizeDelta: {x: 59.4791, y: 46.2569}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1556023218
 MonoBehaviour:
@@ -2191,8 +2191,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04dd8b251ea9e1ab98fc9e71eac32351, type: 2}
+  m_sharedMaterial: {fileID: -8903681024326283375, guid: 04dd8b251ea9e1ab98fc9e71eac32351, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
