@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/nextLocationScene.unity
     guid: 2d4c73268212beb47b235e4233fcc70f
+  - enabled: 1
+    path: Assets/Scenes/Settings Page.unity
+    guid: 2a0ac170d45397d51bef040e081d16f8
   m_configObjects: {}
