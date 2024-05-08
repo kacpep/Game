@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class QuestionData
 {
+    public string gameId;
     public string number;
     public string lat;
     public string lng;
@@ -44,22 +46,40 @@ public class generateQrToJson : MonoBehaviour
     {
 
     }
-    public void RefactorJson(string qrText)
+    public QuestionData RefactorJson(string qrText)
     {
+     
+
         allData = JsonUtility.FromJson<QuestionData>(qrText);
+ 
+        if(allData == null || allData.gameId != PlayerPrefs.GetString("gameId") || allData.name == null || allData.number == null || allData.lat == null || allData.lng == null || allData.question == null || allData.answers.a == null || allData.answers.b == null || allData.answers.c == null || allData.answers.d == null || allData.correct_answer == null) 
+        {
+            return null;
+        }
+
         PlayerPrefs.SetString("name", allData.name);
         PlayerPrefs.SetString("number",allData.number);
         PlayerPrefs.SetString("lat", allData.lat);
         PlayerPrefs.SetString("lng", allData.lng);
+        
+        return allData;
 
     }
-    public void RefactorJsonInitial(string qrText)
+    public InitialData RefactorJsonInitial(string qrText)
     {
         initialData = JsonUtility.FromJson<InitialData>(qrText);
+        if(initialData == null || initialData.gameId == null || initialData.gameName == null){
+            return null;
+        }
         PlayerPrefs.SetString("name", initialData.name);
         PlayerPrefs.SetString("lastNumber", initialData.numberOfQuestions);
+        PlayerPrefs.SetString("gameId", initialData.gameId);
         PlayerPrefs.SetString("lat", initialData.lat);
         PlayerPrefs.SetString("lng", initialData.lng);
+        
+       return initialData;
+     
+
 
     }
     // Update is called once per frame
