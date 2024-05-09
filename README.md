@@ -32,8 +32,15 @@ Install this in phone📱...
 
 
 
+
+
 ## Authors ⚒️
 
 - [@kacpep](https://www.github.com/kacpep) 🤫
 - [@DrFrezze71](https://www.github.com/DrFrezze71) 🤕
+
+
+## Test game is in pdf file 
+
+
 
