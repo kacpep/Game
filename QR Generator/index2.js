@@ -1,6 +1,6 @@
 const form = document.getElementById("qr-form");
 const qrCodeContainer = document.getElementById("qr-code");
-
+let numberQuestion = 1;
 form.addEventListener("submit", function (event) {
 	event.preventDefault();
 
@@ -38,13 +38,10 @@ form.addEventListener("submit", function (event) {
 	});
     console.log(answerCorrect)
 
-	// if (question === '' || location === '') {
-	//     alert('Proszę wypełnić wszystkie pola!');
-	//     return;
-	// }
 
 	const data = {
 		gameId: "gameId",
+		number: numberQuestion,
 		name: nameLocation,
 		question: questionName,
 		answers: {
@@ -54,14 +51,17 @@ form.addEventListener("submit", function (event) {
 			d: answerD,
 		},
 		correct_answer: answerCorrect,
-		Coordinates: Coordinates,
+		lat: Coordinates[0],
+		lng: Coordinates[1],
 	};
 
 	generateQRCode(data);
+    numberQuestion++;
+
 });
 
 function generateQRCode(data) {
 	const qrCodeText = JSON.stringify(data);
-	qrCodeContainer.innerHTML = "";
+	qrCodeContainer.innerHTML += `<h3>Question number: ${numberQuestion}</h3>`;
 	new QRCode(qrCodeContainer, qrCodeText);
 }
