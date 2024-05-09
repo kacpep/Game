@@ -117,7 +117,7 @@ formQuestion.addEventListener("submit", function (event) {
 		lat: Coordinates[0],
 		lng: Coordinates[1],
 	};
-	let encryptedDataText = encrypt(JSON.stringify(data), 5).replace("\\","");
+	let encryptedDataText = encrypt(JSON.stringify(data), 5);
     
 	generateQRCode(encryptedDataText);
 	currentQuestion++;
@@ -125,8 +125,9 @@ formQuestion.addEventListener("submit", function (event) {
 });
 
 function generateQRCode(data) {
-	const qrCodeText = JSON.stringify(data);
-	qrCodeContainer.innerHTML += `<h3>Question number: ${currentQuestion}</h3>`;
+	const qrCodeText = data;
+    console.log(data)
+	// qrCodeContainer.innerHTML += `<h3>Question number: ${currentQuestion}</h3>`;
 	new QRCode(qrCodeContainer, qrCodeText);
 }
 document.querySelector("#printButton").addEventListener("click", () => {
