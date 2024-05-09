@@ -36,8 +36,9 @@ form.addEventListener('submit', function(event) {
         lat:Coordinates[0],
         lng:Coordinates[1]
     };
-
-    generateQRCode(data);
+    console.log(JSON.stringify(data))
+    let encryptedDataText = encrypt(JSON.stringify(data),5)
+    generateQRCode(encryptedDataText);
 });
 
 function generateQRCode(data) {
@@ -48,5 +49,37 @@ function generateQRCode(data) {
 
 
 
-let generateButton = document.querySelector("generatePDF")
 
+
+function encrypt(inputString, shift) {
+    
+    let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split("");
+    let alphabet2 = 'abcdefghijklmnopqrstuvwxyz'.split("");
+    let numbers = '0123456789'.split("");
+
+    function shiftChar(char, shiftAmount, arr) {
+        let index = arr.indexOf(char);
+        if (index !== -1) {
+            let newIndex = (index + shiftAmount) % arr.length;
+            if (newIndex < 0) newIndex += arr.length;
+            return arr[newIndex];
+        }
+        return char; 
+    }
+
+    let result = "";
+    for (let i = 0; i < inputString.length; i++) {
+        let char = inputString[i];
+        if (alphabet.includes(char)) {
+            result += shiftChar(char, shift, alphabet);
+        } else if (alphabet2.includes(char)) {
+            result += shiftChar(char, shift, alphabet2);
+        } else if (numbers.includes(char)) {
+            result += shiftChar(char, shift, numbers);
+        } else {
+            result += char; 
+        }
+        
+    }
+    return result;
+}
