@@ -1,6 +1,8 @@
 const form = document.getElementById('qr-form');
 const qrCodeContainer = document.getElementById('qr-code');
 
+
+
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -21,17 +23,18 @@ form.addEventListener('submit', function(event) {
     
     
 
-    // if (question === '' || location === '') {
-    //     alert('Proszę wypełnić wszystkie pola!');
-    //     return;
-    // }
+    if (gameName === '' || NumberOfQuestions === ''|| FirstLocationName === ''|| Coordinates === '') {
+        alert('Proszę wypełnić wszystkie pola!');
+        return;
+    }
 
     const data = {
         gameId: gameId,
         gameName: gameName,
         NumberOfQuestions: NumberOfQuestions,
         FirstLocationName:FirstLocationName,
-        Coordinates:Coordinates
+        lat:Coordinates[0],
+        lng:Coordinates[1]
     };
 
     generateQRCode(data);
@@ -42,3 +45,8 @@ function generateQRCode(data) {
     qrCodeContainer.innerHTML = ''; 
     new QRCode(qrCodeContainer, qrCodeText);
 }
+
+
+
+let generateButton = document.querySelector("generatePDF")
+
