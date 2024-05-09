@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Codes Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div>
+    <h2>QR Codes Generator</h2>
+    <form id="qr-form">
+        <h2>Generating Initial</h2>
+        <div>
+            <label for="gameName">Game Name</label>
+            <input type="text" id="gameName" name="gameName">
+        </div>
+        <div>
+            <label for="NumberOfQuestions">Number of Questions</label>
+            <input type="text" id="NumberOfQuestions" name="NumberOfQuestions">
+        </div>
+        <div>
+            <label for="FirstLocationName">First Location Name</label>
+            <input type="text" id="FirstLocationName" name="FirstLocationName">
+        </div>
+        <div>
+            <label for="Coordinates">Coordinates</label>
+            <input type="text" id="Coordinates" name="Coordinates" placeholder="example: -4.4233152, 36.73369">
+        </div>
+
+        <button type="submit">Generate</button>
+    </form>
+    <div id="qr-code"></div>
+</div>
+<script src="qrcode.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/qrcode.min.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>

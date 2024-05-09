@@ -1,0 +1,55 @@
+{
+    "gameId": "12ek",
+     "number": "1",
+    "name":"residence",
+     "lat": "36.73369",
+     "lng": "-4.4233152",
+     "question": "When catedra was build",
+     "answers": {
+       "a": "1921 r.",
+       "b": "1923 r.",
+       "c": "1925 r.",
+       "d": "1926 r."
+     },
+     "correct_answer": "a"
+   }
+   {
+    "gameId": "12ek",
+     "number": "2",
+    "name":"forja roja",
+     "lat": "36.73369",
+     "lng": "-4.4233152",
+     "question": "how much is rooms inside",
+     "answers": {
+       "a": " i dont know",
+       "b": "2",
+       "c": "8",
+       "d": "78"
+     },
+     "correct_answer": "a"
+   }
+   {
+    "gameId": "12ek",
+     "number": "3",
+    "name":"end",
+     "lat": "36.73369",
+     "lng": "-4.4233152",
+     "question": "when is 'do domu' moment ",
+     "answers": {
+       "a": "9:00",
+       "b": "23:00",
+       "c": "3:00",
+       "d": "18:00"
+     },
+     "correct_answer": "a"
+   }
+   {
+    "gameId": "12ek",
+    "gameName": "Advanced GAME",
+    "numberOfQuestions": "3",
+   
+      "name": "atedra noterdame",
+      "lat": "36.73369",
+      "lng": "-4.4233152"
+    
+  }
