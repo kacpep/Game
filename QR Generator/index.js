@@ -40,17 +40,18 @@ form.addEventListener("submit", function (event) {
 		gameId: gameId,
 		gameName: gameName,
 		NumberOfQuestions: NumberOfQuestions,
-		FirstLocationName: FirstLocationName,
+		name: FirstLocationName,
 		lat: Coordinates[0],
 		lng: Coordinates[1],
 	}; 
-	let encryptedDataText = encrypt(JSON.stringify(data), 5);
-
+	let encryptedDataText = encrypt(JSON.stringify(data), 5).toString();
+    
 	generateQRCodeInitial(encryptedDataText);
 });
 
 function generateQRCodeInitial(data) {
-	const qrCodeText = JSON.stringify(data);
+	const qrCodeText = data;
+
 	qrCodeContainerInitail.innerHTML = "";
 	new QRCode(qrCodeContainerInitail, qrCodeText);
 	qrCodeContainer.innerHTML = "";
@@ -116,7 +117,8 @@ formQuestion.addEventListener("submit", function (event) {
 		lat: Coordinates[0],
 		lng: Coordinates[1],
 	};
-	let encryptedDataText = encrypt(JSON.stringify(data), 5);
+	let encryptedDataText = encrypt(JSON.stringify(data), 5).replace("\\","");
+    
 	generateQRCode(encryptedDataText);
 	currentQuestion++;
 
