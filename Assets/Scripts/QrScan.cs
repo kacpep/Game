@@ -3,12 +3,13 @@ using UnityEngine.UI;
 using ZXing;
 using TMPro;
 using UnityEngine.SceneManagement;
-using JetBrains.Annotations;
+
 
 public class QRCodeScanner : MonoBehaviour
 {
     public RawImage cameraDisplay; // Reference to the RawImage component for displaying the camera feed
     public TMP_Text IdText;
+  
     private WebCamTexture webcamTexture;
     private BarcodeReader barcodeReader;
     public static string qrText;
@@ -19,7 +20,14 @@ public class QRCodeScanner : MonoBehaviour
 
     void Start()
     {
-
+        if(PlayerPrefs.GetInt("CurrentStatus", 0) == 0)
+        {
+            IdText.SetText("Looking for initial QR");
+            IdText.fontSize = 13;
+        }else{
+            IdText.SetText("Looking for QR");
+            IdText.fontSize = 20;
+        }
        
 
 
