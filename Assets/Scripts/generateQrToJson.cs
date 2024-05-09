@@ -49,8 +49,9 @@ public class generateQrToJson : MonoBehaviour
     }
     public QuestionData RefactorJson(string qrText)
     {
-     
-
+        Debug.Log(qrText);
+        qrText = Cipher.CaesarCipher(qrText);
+        Debug.Log(qrText);
         allData = JsonUtility.FromJson<QuestionData>(qrText);
  
         if(allData == null || allData.gameId != PlayerPrefs.GetString("gameId") || allData.name == null || allData.number == null || allData.lat == null || allData.lng == null || allData.question == null || allData.answers.a == null || allData.answers.b == null || allData.answers.c == null || allData.answers.d == null || allData.correct_answer == null) 
@@ -74,6 +75,10 @@ public class generateQrToJson : MonoBehaviour
     }
     public InitialData RefactorJsonInitial(string qrText)
     {
+        Debug.Log(qrText);
+        qrText = Cipher.CaesarCipher(qrText);
+        Debug.Log(qrText);
+
         initialData = JsonUtility.FromJson<InitialData>(qrText);
         if(initialData == null || initialData.gameId == null || initialData.gameName == null){
             return null;
