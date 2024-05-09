@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Codes Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div>
+        <h2>QR Codes Generator</h2>
+        <form id="qr-form">
+            <h2>Generating Questions</h2>
+            <div class="inputGroup">
+                <label for="nameLocation">Name locaiton:</label>
+                <input type="text" id="nameLocation" name="nameLocation">
+            </div>
+
+            <div class="inputGroup">
+                <label for="Coordinates">Coordinates</label>
+                <input type="text" id="Coordinates" name="Coordinates" placeholder="example: -4.4233152, 36.73369">
+            </div>
+            <div class="inputGroup">
+                <label for="questionName">Question Name</label>
+                <input type="text" id="questionName" name="questionName">
+            </div>
+            <h3>Answers:</h3>
+            <div class="answer">
+                <label for="answerA">Answer A:</label>
+                <input type="text" id="answerA" name="answerA">
+                <div class="radioGroup">
+
+                    <input type="radio" name="correct" class="answerCorrect" id="correctA">
+                    <label for="correctA">Correct Answer</label>
+                </div>
+
+            </div>
+            <div class="answer">
+                <label for="answerB">Answer B:</label>
+                <input type="text" id="answerB" name="answerB">
+                <div class="radioGroup">
+
+                    <input type="radio" name="correct" class="answerCorrect" id="correctB">
+                    <label for="correctB">Correct Answer</label>
+                </div>
+
+            </div>
+            <div class="answer">
+                <label for="answerC">Answer C:</label>
+                <input type="text" id="answerC" name="answerC">
+                <div class="radioGroup">
+
+                    <input type="radio" name="correct" class="answerCorrect" id="correctC">
+                    <label for="correctC">Correct Answer</label>
+                </div>
+
+            </div>
+            <div class="answer">
+                <label for="answerD">Answer D:</label>
+                <input type="text" id="answerD" name="answerD">
+                <div class="radioGroup">
+                    <input type="radio" name="correct" class="answerCorrect" id="correctD">
+                    <label for="correctD">Correct Answer</label>
+                </div>
+
+            </div>
+            <button type="submit">Generate</button>
+        </form>
+        <div id="qr-code"></div>
+    </div>
+    <script src="qrcode.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/qrcode.min.js"></script>
+    <script src="index2.js"></script>
+
+</body>
+
+</html>

@@ -6,9 +6,7 @@ label {
     font-weight: bold;
 }
 input[type="text"] {
-    width: 100%;
     padding: 8px;
-    margin-bottom: 10px;
     box-sizing: border-box;
 }
 button {
@@ -23,4 +21,18 @@ button:hover {
 }
 #qr-code {
     margin-top: 20px;
+}
+.inputGroup{
+
+    margin-bottom: 20px;
+}
+.answer{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.radioGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
