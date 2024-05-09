@@ -2140,7 +2140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeSlider: {fileID: 1979060257}
   timeOver: {fileID: 2059090018}
-  targetTime: 10
+  targetTime: 30
 --- !u!114 &1193180267
 MonoBehaviour:
   m_ObjectHideFlags: 0
