@@ -1,32 +1,32 @@
 {
     "gameId": "12ek",
      "number": "1",
-    "name":"residence",
+    "name":"Catedra Malaga",
      "lat": "36.73369",
      "lng": "-4.4233152",
-     "question": "When catedra was build",
+     "question": "how much Forja roja have hairs",
      "answers": {
-       "a": "1921 r.",
-       "b": "1923 r.",
-       "c": "1925 r.",
-       "d": "1926 r."
+       "a": "2",
+       "b": "1",
+       "c": "154",
+       "d": "To much"
      },
-     "correct_answer": "a"
+     "correct_answer": "d"
    }
    {
     "gameId": "12ek",
      "number": "2",
-    "name":"forja roja",
+    "name":"Residence",
      "lat": "36.73369",
      "lng": "-4.4233152",
-     "question": "how much is rooms inside",
+     "question": "what year catedra was build",
      "answers": {
-       "a": " i dont know",
-       "b": "2",
-       "c": "8",
-       "d": "78"
+       "a": "2024",
+       "b": "2100",
+       "c": "104",
+       "d": "who know that kind of stuff"
      },
-     "correct_answer": "a"
+     "correct_answer": "d"
    }
    {
     "gameId": "12ek",
@@ -34,21 +34,21 @@
     "name":"end",
      "lat": "36.73369",
      "lng": "-4.4233152",
-     "question": "when is 'do domu' moment ",
+     "question": "When trip will end",
      "answers": {
-       "a": "9:00",
-       "b": "23:00",
-       "c": "3:00",
-       "d": "18:00"
+       "a": "tomorrow",
+       "b": "never",
+       "c": "Yesterday",
+       "d": "today"
      },
-     "correct_answer": "a"
+     "correct_answer": "b"
    }
    {
     "gameId": "12ek",
     "gameName": "Advanced GAME",
     "numberOfQuestions": "3",
    
-      "name": "atedra noterdame",
+      "name": "Forja Roja",
       "lat": "36.73369",
       "lng": "-4.4233152"
     

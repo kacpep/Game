@@ -2122,9 +2122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: {fileID: 1512981572}
   answer1: {fileID: 382138985}
-  answer2: {fileID: 0}
-  answer3: {fileID: 0}
-  answer4: {fileID: 0}
+  answer2: {fileID: 1806577098}
+  answer3: {fileID: 1230032454}
+  answer4: {fileID: 301879927}
   correctAnswer: 
 --- !u!114 &1193180266
 MonoBehaviour:
