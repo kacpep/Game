@@ -3,11 +3,14 @@ const qrCodeContainerInitail = document.getElementById("qr-code-initial");
 
 const formQuestion = document.getElementById("qr-form-question");
 const qrCodeContainer = document.getElementById("qr-code-question");
-
+const boxes = document.querySelector(".boxes")
+const quest_box = document.querySelector(".box-question")
 let numberQuestion = 1;
 let currentQuestion = 1;
 
 let gameId = "";
+
+var questions = []
 
 form.addEventListener("submit", function (event) {
 	event.preventDefault();
@@ -29,9 +32,7 @@ form.addEventListener("submit", function (event) {
 		alert("Fill in all fields!!");
 		return;
 	}
-	if (!confirm("If you have any questions generated now, they will be deleted!!!")) {
-		return;
-	}
+	
 	gameId = generateUUID();
 
 	numberQuestion = NumberOfQuestions;
@@ -44,6 +45,14 @@ form.addEventListener("submit", function (event) {
 		lat: Coordinates[0],
 		lng: Coordinates[1],
 	}; 
+
+	
+	questions.forEach(element => {
+		element.gameId = data.gameId
+		
+	});
+	displayQuestionQrs()
+	console.log(questions)
 	
 	let encryptedDataText = encrypt(JSON.stringify(data), 5).toString();
     console.log(encryptedDataText)
@@ -56,8 +65,27 @@ function generateQRCodeInitial(data) {
 	qrCodeContainerInitail.removeAttribute("src")
 	qrCodeContainerInitail.setAttribute("src",`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${qrCodeText}`)
 	
-	qrCodeContainer.innerHTML = "";
+
+	
+
+	
 	numberQuestion++;
+}
+function displayQuestionQrs(){
+	qrCodeContainer.innerHTML =""
+	questions.forEach(element => {
+		let encryptedData = encrypt(JSON.stringify(element), 5);
+		let div = document.createElement("div")
+		div.classList.add(`numb${element.number}`)
+		
+		let num = document.createElement("p")
+		num.textContent = element.number
+		
+		
+		generateQRCode(encryptedData,div)
+		div.append(num)
+		qrCodeContainer.append(div)
+	});
 }
 
 formQuestion.addEventListener("submit", function (event) {
@@ -119,16 +147,20 @@ formQuestion.addEventListener("submit", function (event) {
 		lat: Coordinates[0],
 		lng: Coordinates[1],
 	};
-	console.log(data)
-	let encryptedDataText = encrypt(JSON.stringify(data), 5);
+	
+	questions.push(data)
+	displayQuestionQrs();
+	
     
-	generateQRCode(encryptedDataText);
+	
 	currentQuestion++;
 
 });
 
-function generateQRCode(data) {
-	const qrCodeText = data;
+
+
+function generateQRCode(data, numb) {
+	
     console.log(data)
 	// qrCodeContainer.innerHTML += `<h3>Question number: ${currentQuestion}</h3>`;
 	
@@ -136,11 +168,14 @@ function generateQRCode(data) {
 	img.removeAttribute("src")
 	
 	img.setAttribute("src",`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${data}`)
-	qrCodeContainer.appendChild(img)
+	
+	numb.appendChild(img)
 }
 document.querySelector("#printButton").addEventListener("click", () => {
 	form.classList.add("hidden");
 	formQuestion.classList.add("hidden");
+	boxes.classList.add("print-mode")
+	quest_box.classList.add("box-question-enabled")
     print()
     
 });
@@ -148,6 +183,8 @@ document.querySelector("#printButton").addEventListener("click", () => {
 document.querySelector("#viewButton").addEventListener("click", () => {
 	form.classList.remove("hidden");
 	formQuestion.classList.remove("hidden");
+	boxes.classList.remove("print-mode")
+	quest_box.classList.remove("box-question-enabled")
 });
 
 

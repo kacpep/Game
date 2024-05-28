@@ -46,3 +46,13 @@ button:hover {
 	display: flex;
 	flex-direction: column;
 }
+.print-mode{
+	flex-direction: column;
+	width: fit-content;
+	align-items: center;
+	width: 100%;
+	text-align: center;
+}
+.box-question-enabled{
+	margin-top: 400px;
+}
