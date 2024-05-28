@@ -39,21 +39,23 @@ form.addEventListener("submit", function (event) {
 	const data = {
 		gameId: gameId,
 		gameName: gameName,
-		NumberOfQuestions: NumberOfQuestions,
+		numberOfQuestions: NumberOfQuestions ,
 		name: FirstLocationName,
 		lat: Coordinates[0],
 		lng: Coordinates[1],
 	}; 
+	
 	let encryptedDataText = encrypt(JSON.stringify(data), 5).toString();
-    
+    console.log(encryptedDataText)
 	generateQRCodeInitial(encryptedDataText);
 });
 
 function generateQRCodeInitial(data) {
 	const qrCodeText = data;
 
-	qrCodeContainerInitail.innerHTML = "";
-	new QRCode(qrCodeContainerInitail, qrCodeText);
+	qrCodeContainerInitail.removeAttribute("src")
+	qrCodeContainerInitail.setAttribute("src",`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${qrCodeText}`)
+	
 	qrCodeContainer.innerHTML = "";
 	numberQuestion++;
 }
@@ -87,16 +89,16 @@ formQuestion.addEventListener("submit", function (event) {
 			console.log(answer.id);
 			switch (answer.id) {
 				case "correctA":
-					answerCorrect = "A";
+					answerCorrect = "a";
 					break;
 				case "correctB":
-					answerCorrect = "B";
+					answerCorrect = "b";
 					break;
 				case "correctC":
-					answerCorrect = "C";
+					answerCorrect = "c";
 					break;
 				case "correctD":
-					answerCorrect = "D";
+					answerCorrect = "d";
 					break;
 			}
 		}
@@ -117,6 +119,7 @@ formQuestion.addEventListener("submit", function (event) {
 		lat: Coordinates[0],
 		lng: Coordinates[1],
 	};
+	console.log(data)
 	let encryptedDataText = encrypt(JSON.stringify(data), 5);
     
 	generateQRCode(encryptedDataText);
@@ -128,7 +131,12 @@ function generateQRCode(data) {
 	const qrCodeText = data;
     console.log(data)
 	// qrCodeContainer.innerHTML += `<h3>Question number: ${currentQuestion}</h3>`;
-	new QRCode(qrCodeContainer, qrCodeText);
+	
+	var img = document.createElement("img")
+	img.removeAttribute("src")
+	
+	img.setAttribute("src",`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${data}`)
+	qrCodeContainer.appendChild(img)
 }
 document.querySelector("#printButton").addEventListener("click", () => {
 	form.classList.add("hidden");

@@ -42,3 +42,7 @@ button:hover {
 	display: none;
 }
 
+#qr-code-question{
+	display: flex;
+	flex-direction: column;
+}
